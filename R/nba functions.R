@@ -9,8 +9,7 @@
 
 
 oldest = function(year){
-  data = read.csv("./data/Seasons_Stats_NBA.csv")
-  temp = subset(data, Year == year)
+  temp = subset(nba_data, Year == year)
   temp = temp[which.max(temp$Age),]
   return(temp)
 }
@@ -29,8 +28,7 @@ oldest = function(year){
 
 
 mostpoint = function(year){
-  data = read.csv("./data/Seasons_Stats_NBA.csv")
-  temp = subset(data, Year == year)
+  temp = subset(nba_data, Year == year)
   temp = temp[which.max(temp$PTS),]
   return(temp)
 }
@@ -49,8 +47,7 @@ mostpoint = function(year){
 
 
 correlation = function(year){
-  data = read.csv("./data/Seasons_Stats_NBA.csv")
-  temp = subset(data, Year == year)
+  temp = subset(nba_data, Year == year)
   temp = purrr::keep(temp, is.numeric)
   return(cor(temp, use = "complete.obs"))
 }
