@@ -10,7 +10,7 @@
 
 
 correlation = function(year){
-  data = read.csv("data/Seasons_Stats_NBA.csv")
+  data = read.csv("./data/Seasons_Stats_NBA.csv")
   temp = subset(data, Year == year)
   temp = purrr::keep(temp, is.numeric)
   return(cor(temp, use = "complete.obs"))
