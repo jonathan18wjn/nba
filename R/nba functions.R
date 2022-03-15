@@ -7,6 +7,7 @@
 #' @examples
 #' oldest(1998)
 
+nba_data = read.csv("./data/nba_data.csv")
 
 oldest = function(year){
   temp = subset(nba_data, Year == year)
